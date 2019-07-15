@@ -2,10 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const IssueIndex = (props) => {
+
   const issues = props.issues.map((issue, i) => (
-    <div key={i}>
-      <h3><Link to={`/issue/${issue.id}`}> Open </Link>{' '} {issue.title}</h3>
-      <p>{issue.title}</p>
+    <div key={i} > 
+      <div className='issue-show'>
+        <Link to={`/issue/${issue.id}`} className="title"><h3 className="title"><i class="fas fa-exclamation-circle" style={{padding: '10px'}}></i>{issue.title}</h3></Link>{' '} 
+        <p>{issue.title}</p>
+      </div>
     </div>
   ))
   return (
@@ -15,6 +18,5 @@ const IssueIndex = (props) => {
     </div>
   );
 }
-
 
 export default IssueIndex;
